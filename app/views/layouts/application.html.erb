@@ -8,7 +8,7 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <div id="banner">
-    <%= image_tag("https://pbs.twimg.com/media/BL3E_V_CcAEwWh8.jpg" ,size: "500x150") %>
+    <%= image_tag("http://cdn.playbuzz.com/cdn/20fdba2b-84e7-4ab3-8683-190dad4ac03f/a37ab395-2e6b-4309-89b5-9caaf31d1f0d.jpg") %>
     <%= @page_title || "Pragmatic Bookshelf" %>
   </div>
   <div id="columns">
@@ -25,6 +25,15 @@
         <li><a href="http://www..../news">News</a></li>
         <li><a href="http://www..../contact">Contact</a></li>
       </ul>
+
+      <% if session[:user_id] %>
+        <ul>
+          <li><%= link_to 'Orders',   orders_path   %></li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Users',    users_path    %></li>
+        </ul>
+        <%= button_to 'Logout', logout_path, method: :delete   %>
+      <% end %>
     </div>
     <div id="main">
       <%= yield %>
@@ -32,5 +41,3 @@
   </div>
 </body>
 </html>
-
-
