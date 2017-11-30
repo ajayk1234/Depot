@@ -51,6 +51,8 @@ group :development do
   gem 'pry-byebug' 
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
+  gem 'bcrypt-ruby', '~> 3.1.2'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
